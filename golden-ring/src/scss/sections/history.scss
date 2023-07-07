@@ -1,5 +1,7 @@
 .history {
   padding: 40px 0;
+  @include adaptiveValue('padding-top', 40, 20);
+  @include adaptiveValue('padding-bottom', 40, 20);
 
   background-color: #fff;
 
@@ -15,13 +17,16 @@
   &__title {
     display: flex;
     column-gap: 15px;
+    @include adaptiveValue('column-gap', 15, 10);
   }
 
   &__content {
     padding: 30px 0px 0px 0px;
+    @include adaptiveValue('padding-top', 30, 15);
 
     font-size: 20px;
     text-align: justify;
+    @include adaptiveValue('font-size', 20, 16);
 
     &::first-letter {
       margin: -10px 10px 10px 0px;
@@ -42,7 +47,12 @@
 
   &__quote {
     margin: 30px 0px 30px 50px;
+    @include adaptiveValue('margin-left', 50, 30);
+    @include adaptiveValue('margin-bottom', 30, 15);
+
     padding: 15px 0;
+    @include adaptiveValue('padding-top', 15, 10);
+    @include adaptiveValue('padding-bottom', 15, 5);
 
     font-style: italic;
 
@@ -53,6 +63,7 @@
       position: absolute;
       top: 0;
       left: -50px;
+      @include adaptiveValue('left', -50, -30);
       width: 2px;
       height: 100%;
 
@@ -73,16 +84,21 @@
   &__text {
     font-size: 40px;
     font-weight: 500;
+    @include adaptiveValue('font-size', 40, 25);
   }
 
   &__icon {
     position: relative;
     top: 5px;
+    @include adaptiveValue('top', 5, 2);
 
     img {
       width: 45px;
       height: 45px;
       object-fit: cover;
+
+      @include adaptiveValue('width', 45, 30);
+      @include adaptiveValue('height', 45, 30);
     }
   }
 }
@@ -99,6 +115,11 @@
       width: 55px;
       height: 40px;
 
+      @include adaptiveValue('top', -15, -7);
+      @include adaptiveValue('left', -30, -15);
+      @include adaptiveValue('width', 55, 30);
+      @include adaptiveValue('height', 40, 22);
+
       background: url('@img/svg/quote.svg');
       background-position: center;
       background-size: cover;
@@ -107,6 +128,7 @@
 
   &__author {
     padding: 25px 0px 0px 0px;
+    @include adaptiveValue('padding-top', 25, 15);
 
     font-style: normal;
   }
