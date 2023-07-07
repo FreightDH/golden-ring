@@ -1,7 +1,7 @@
-@use "sass:math";
+@use 'sass:math';
 
 //<МИКСИНЫ>
-@import "base/mixins";
+@import 'base/mixins';
 //</МИКСИНЫ>
 
 //<ШРИФТЫ>
@@ -10,13 +10,21 @@
 //</Подключаем шрифты>
 
 //<Шрифт по умолчанию>
-$fontFamily: "";
+$fontFamily: 'Montserrat', sans-serif;
 $fontSize: rem(14);
-$mainColor: #000;
+$mainColor: rgba(
+  $color: #000,
+  $alpha: 0.8,
+);
 //</Шрифт по умолчанию>
 //</ШРИФТЫ>
 
 //<ПЕРЕМЕННЫЕ>
+// Цвет шрифта на начальном экране
+$introMainColor: rgba(
+  $color: #fff,
+  $alpha: 0.9,
+);
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина макета
@@ -44,7 +52,7 @@ $responsiveType: 1;
 //<КОНТЕЙНЕР>
 @if ($responsiveType == 1) {
   // Отзывчивая
-  [class*="__container"] {
+  [class*='__container'] {
     @if ($maxWidthContainer > 0) {
       max-width: rem($maxWidthContainer);
       box-sizing: content-box;
@@ -56,7 +64,7 @@ $responsiveType: 1;
   }
 } @else {
   // Брейк-поинты
-  [class*="__container"] {
+  [class*='__container'] {
     margin: 0 auto;
     @if ($maxWidthContainer > 0) {
       max-width: rem($maxWidthContainer);
@@ -83,7 +91,7 @@ $responsiveType: 1;
 //</КОНТЕЙНЕР>
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
-@import "base/null";
+@import 'base/null';
 
 html {
   scroll-behavior: smooth;
@@ -115,10 +123,10 @@ body {
 
 //<ПОДЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 // @import "header";
-// @import "home";
+@import 'sections';
 // @import "footer";
 //</ПОДЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
-@import "base";
+@import 'base';
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
