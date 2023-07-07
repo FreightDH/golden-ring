@@ -37,6 +37,11 @@ $arrowSmallSize: 20px;
 
   transform: translate(-50%, -50%);
 
+  @media (max-width: $mobileSmall) {
+    width: $arrowSmallSize;
+    height: $arrowSmallSize;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -48,6 +53,10 @@ $arrowSmallSize: 20px;
 
     transform: translate($arrowThickness, calc($arrowSize * 4 / 3)) rotate(-45deg);
     animation: arrows 3s linear infinite;
+
+    @media (max-width: $mobileSmall) {
+      transform: translate($arrowThickness, calc($arrowSmallSize * 4 / 3)) rotate(-45deg);
+    }
   }
 
   &:after {
@@ -61,6 +70,10 @@ $arrowSmallSize: 20px;
 
     transform: translate(calc($arrowSize * 2 / 3), 0px) rotate(-45deg);
     animation: arrows 3s linear infinite calc(3s / -2);
+
+    @media (max-width: $mobileSmall) {
+      transform: translate(calc($arrowSmallSize * 2 / 3), 0px) rotate(-45deg);
+    }
   }
 }
 
@@ -69,6 +82,10 @@ $arrowSmallSize: 20px;
     border-left: $arrowThickness solid rgba($color: #fff, $alpha: 0);
     border-bottom: $arrowThickness solid rgba($color: #fff, $alpha: 0);
     transform: translate(calc($arrowSize / -6), calc($arrowSize * 4 / -6)) rotate(-45deg);
+
+    @media (max-width: $mobileSmall) {
+      transform: translate(calc($arrowSmallSize / -6), calc($arrowSmallSize * 4 / -6)) rotate(-45deg);
+    }
   }
   10%,
   90% {
@@ -79,10 +96,18 @@ $arrowSmallSize: 20px;
     border-left: $arrowThickness solid $introMainColor;
     border-bottom: $arrowThickness solid $introMainColor;
     transform: translate(calc($arrowSize / -6), 0px) rotate(-45deg);
+
+    @media (max-width: $mobileSmall) {
+      transform: translate(calc($arrowSmallSize / -6), 0px) rotate(-45deg);
+    }
   }
   100% {
     border-left: $arrowThickness solid rgba($color: #fff, $alpha: 0);
     border-bottom: $arrowThickness solid rgba($color: #fff, $alpha: 0);
     transform: translate(calc($arrowSize / -6), calc($arrowSize * 4 / 6)) rotate(-45deg);
+
+    @media (max-width: $mobileSmall) {
+      transform: translate(calc($arrowSmallSize / -6), calc($arrowSmallSize * 4 / 6)) rotate(-45deg);
+    }
   }
 }
