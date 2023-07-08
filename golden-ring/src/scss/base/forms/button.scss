@@ -2,7 +2,13 @@
 // Snippet code "a.btn"
 .btn {
   display: inline-block;
-  padding: 0px 0px;
+  min-height: 40px;
+  padding: 0px 50px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 38px;
+  background-color: #4574e4;
+  border-radius: 20px;
 
   &:hover {
   }
