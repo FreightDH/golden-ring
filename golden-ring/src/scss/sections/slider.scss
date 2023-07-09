@@ -1,5 +1,8 @@
 @import '../base/swiper';
 
+$slideSize: 360px;
+$slideMinSize: ($minWidth - $containerPadding) + px;
+
 .slider {
   padding: 40px 0;
   background-color: #f4f1e9;
@@ -13,38 +16,53 @@
 
   &__title {
     font-size: 40px;
+    @include adaptiveValue('font-size', 40, 25);
     font-weight: 500;
   }
-}
 
+  &__swiper {
+    padding: 35px 0px 0px 0px;
+  }
+}
 .swiper {
-  padding: 35px 0px 0px 0px;
-}
+  &__wrapper {
+    max-width: calc($slideSize * 3 + 15px * 2);
 
-.swiper-wrapper {
-  gap: 15px;
-  align-items: stretch;
-}
+    @media (max-width: $pc) {
+      max-width: calc($slideSize * 2 + 15px);
+    }
 
-.swiper-slide {
-  width: 360px;
+    @media (max-width: $mobile) {
+      max-width: $slideSize;
+    }
 
-  display: flex;
-  flex-direction: column;
+    @media (max-width: $mobileSmall) {
+      @include adaptiveValue('max-width', 360, 290, 479.98, 320);
+    }
+  }
+  &__slide {
+    max-width: $slideSize;
 
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    display: flex;
+    flex-direction: column;
 
-  transition: all 0.3s ease 0s;
+    background-color: #fff;
+    border-radius: 10px;
+    // box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 
-  &:hover {
-    transform: translateY(-10px);
+    transition: all 0.3s ease 0s;
+
+    @media (min-width: $mobile) {
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
   }
 }
 .slide {
   &__image {
     min-height: 200px;
+    max-height: 200px;
 
     img {
       width: 100%;
@@ -84,6 +102,4 @@
       font-weight: 600;
     }
   }
-}
-.btn {
 }
