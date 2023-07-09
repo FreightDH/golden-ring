@@ -26,7 +26,7 @@
 
     font-size: 20px;
     text-align: justify;
-    @include adaptiveValue('font-size', 20, 16);
+    @include adaptiveValue('font-size', 20, 18);
 
     &::first-letter {
       margin: -10px 10px 10px 0px;
