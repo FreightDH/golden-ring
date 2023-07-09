@@ -1,64 +1,40 @@
-const slidesInfo = [
-  {
-    image: 'sergiev-posad',
-    city: 'Сергиев Посад',
-    date: '1345 г.',
-    sights: 'Cвято-Троицкая Сергиева Лавра, Черниговский скит, музей игрушки, музей «Сергиевская Кухмистерская»',
-  },
-  {
-    image: 'pereslavl',
-    city: 'Переславль-Залесский',
-    date: '1152 г.',
-    sights:
-      'Краеведческий музей, «Ботик Петра I», Спасо-Преображенский собор, музей «Дом Берендея», Синий камень, Плещеево озеро',
-  },
-  {
-    image: 'rostov',
-    city: 'Ростов Великий',
-    date: '862 г. (первое упоминание в летописи)',
-    sights:
-      'Ростовский кремль, Спасо-Яковлевский монастырь, Успенский собор и соборная звонница, Митрополичий сад, музей финифти, озеро Неро',
-  },
-  {
-    image: 'uglich',
-    city: 'Углич',
-    date: '937 г.',
-    sights:
-      'Угличский кремль, музей мифов и суеверий русского народа , Княжеские палаты, Церковь Царевича Димитрия, музей истории Углича',
-  },
-  {
-    image: 'yaroslavl',
-    city: 'Ярославль',
-    date: '1010 г.',
-    sights:
-      'Ярославский музей-заповедник, шоу-макет «Золотое кольцо», Ярославский художественный музей, Театр им. Ф.Г. Волкова, Волжская набережная',
-  },
-  {
-    image: 'kostroma',
-    city: 'Кострома',
-    date: '1152 г.',
-    sights:
-      'Сусанинская площадь, музей деревянного зодчества «Костромская слобода», Терем Снегурочки, Богоявленско-Анастасиин монастырь',
-  },
-  {
-    image: 'ivanovo',
-    city: 'Иваново',
-    date: '1871 г.',
-    sights: 'Площадь Революции, Ивановский художественный музей, музей первого Совета, музей советского автопрома',
-  },
-  {
-    image: 'suzdal',
-    city: 'Суздаль',
-    date: '1024 г.',
-    sights:
-      'Спасо-Евфимиев монастырь, Торговая площадь, Суздальский кремль, музей деревянного зодчества, музей восковых фигур',
-  },
-  {
-    image: 'vladimir',
-    city: 'Владимир',
-    date: '990 г.',
-    sights: 'Золотые ворота, Ретросклад, Соборная площадь, Старая аптека, кузница Бородиных, водонапорная башня',
-  },
-];
+import slidesInfo from './slidesInfo.js';
 
-export default slidesInfo;
+export function generateSlides() {
+  const swiperWrapper = document.querySelector('.swiper__wrapper');
+
+  slidesInfo.forEach((info) => {
+    const slide = createSlide(info);
+    swiperWrapper.append(slide);
+  });
+}
+
+function createSlide(info) {
+  const slide = createElement('div', 'swiper__slide swiper-slide');
+  const slideImage = createElement(
+    'div',
+    'slide__image',
+    `<img src="./img/cities/${info.image}.jpg" alt="${info.image}">`,
+  );
+  const slideContent = createElement('div', 'slide__content');
+  const slideCity = createElement('div', 'slide__city', `${info.city}`);
+  const slideInfo = createElement('ul', 'slide__info');
+  const infoItemYear = createElement('li', 'info__item', `<span>Год основания:</span> ${info.date}`);
+  const infoItemSights = createElement('li', 'info__item', `<span>Что посетить:</span> ${info.sights}`);
+  const slideButton = createElement('a', 'slide__btn btn', '<span>Подробнее</span>');
+  slideButton.setAttribute('href', `${info.image}.html`);
+
+  slideInfo.append(infoItemYear, infoItemSights);
+  slideContent.append(slideCity, slideInfo, slideButton);
+  slide.append(slideImage, slideContent);
+
+  return slide;
+}
+
+function createElement(tag = 'div', classname = '', content = '') {
+  const element = document.createElement(tag);
+  element.className = `${classname}`;
+  element.innerHTML = `${content}`;
+
+  return element;
+}
