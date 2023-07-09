@@ -1,8 +1,12 @@
 //--------------------------------------------------------------
 .footer {
-  padding: 20px 0px 10px 0px;
+  padding: 20px 0px 15px 0px;
 
   background-color: #404550;
+
+  &__container {
+    max-width: 100%;
+  }
 
   &__body {
     display: flex;
@@ -10,6 +14,7 @@
     justify-content: center;
     align-items: center;
 
+    font-family: 'Montserrat';
     font-size: 14px;
     color: #fff;
   }
@@ -23,8 +28,9 @@
   }
 
   &__copyright {
-    padding: 30px 0px 0px 0px;
+    padding: 35px 0px 0px 0px;
     font-size: 16px;
+    @include adaptiveValue('font-size', 16, 13);
 
     a {
       text-decoration: underline;
@@ -34,6 +40,7 @@
 .list {
   &__item {
     font-size: 18px;
+    @include adaptiveValue('font-size', 18, 15);
 
     &.active {
       color: #45be93;
