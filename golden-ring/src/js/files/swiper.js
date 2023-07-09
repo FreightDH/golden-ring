@@ -1,7 +1,10 @@
 import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 
 export function swiperInit() {
-  const swiper = new Swiper('.slider__swiper', {
+  new Swiper('.slider__swiper', {
+    modules: [Navigation, Pagination],
+
     // Количество отображаемых слайдов
     slidesPerView: 3,
 
@@ -21,10 +24,21 @@ export function swiperInit() {
     // Скорость смены слайдов, чем выше - тем плавнее
     speed: 500,
 
+    // Смена слайдов по клику на стрелки
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // Прогресс-бар
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
+
     // Управление с клавиатуры
     keyboard: {
       enabled: true,
-      // Только когда в области видимости
       onlyInViewport: true,
     },
 
@@ -38,6 +52,8 @@ export function swiperInit() {
         slidesPerView: 2,
         slidesPerGroup: 2,
         speed: 1000,
+        simulateTouch: false,
+        grabCursor: false,
       },
       1200.98: {
         slidesPerView: 3,
@@ -46,10 +62,4 @@ export function swiperInit() {
       },
     },
   });
-
-  const nextButton = document.querySelector('.swiper-button-next');
-  nextButton.addEventListener('click', () => swiper.slideNext());
-
-  const prevButton = document.querySelector('.swiper-button-prev');
-  prevButton.addEventListener('click', () => swiper.slidePrev());
 }
