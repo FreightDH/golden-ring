@@ -67,19 +67,14 @@ $slideMinSize: ($minWidth - $containerPadding) + px;
     position: relative;
   }
 
-  &__pagination {
-    margin: 30px 0px 0px 0px;
-    display: none;
+  &__navigation {
+    padding: 20px 0px 0px 0px;
 
-    position: relative;
+    display: flex;
+    column-gap: 60px;
 
     @media (max-width: $mobile) {
-      display: block;
-      width: 360px;
-    }
-
-    @media (max-width: $mobileSmall) {
-      width: 80%;
+      display: none;
     }
   }
 
@@ -95,16 +90,40 @@ $slideMinSize: ($minWidth - $containerPadding) + px;
       color: #255c49;
     }
 
-    @media (max-width: $mobile) {
-      display: none;
+    @media (max-width: 850px) {
+      position: static;
     }
 
     &.swiper-button-prev {
       left: -25px;
+
+      @media (max-width: $pc) {
+        left: 0;
+      }
     }
 
     &.swiper-button-next {
       right: -25px;
+
+      @media (max-width: $pc) {
+        right: 0;
+      }
+    }
+  }
+
+  &__pagination {
+    margin: 30px 0px 0px 0px;
+    display: none;
+
+    position: relative;
+
+    @media (max-width: $mobile) {
+      display: block;
+      width: 360px;
+    }
+
+    @media (max-width: $mobileSmall) {
+      width: 80%;
     }
   }
 }
