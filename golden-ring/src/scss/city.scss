@@ -3,9 +3,6 @@
 .page--city {
   background-color: #fff;
 }
-.page__container {
-  max-width: 1300px;
-}
 .page__body {
   height: 100%;
   display: flex;
@@ -19,6 +16,18 @@
 .city {
   &__title {
     font-size: 40px;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  &__subsubtitle {
+    padding: 0px 0px 20px 0px;
+
+    font-size: 25px;
     font-weight: 600;
   }
 
@@ -57,11 +66,6 @@
       height: 100%;
       object-fit: cover;
     }
-  }
-
-  &__subtitle {
-    font-size: 30px;
-    font-weight: 600;
   }
 
   &__list {
