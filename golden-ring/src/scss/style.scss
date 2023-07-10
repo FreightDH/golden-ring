@@ -10,8 +10,8 @@
 //</Подключаем шрифты>
 
 //<Шрифт по умолчанию>
-$fontFamily: 'Exo 2', sans-serif;
-$fontSize: rem(14);
+$fontFamily: 'Exo 2', 'Helvetica Neue', Arial, sans-serif;
+$fontSize: rem(18);
 $mainColor: rgba(
   $color: #000,
   $alpha: 0.8,
@@ -108,22 +108,20 @@ body {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   // Прижимаем footer
-  /*
-	display: flex;
-	flex-direction: column;
-	> main {
-		flex: 1 1 auto;
-	} 
-	*/
-  // &.loaded {}
+  display: flex;
+  flex-direction: column;
+  > main {
+    flex: 1 1 auto;
+  }
 }
 //</ОБОЛОЧКА>
 
 //<ПОДЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 // @import "header";
-@import 'sections';
+@import 'home';
+@import 'city';
 @import 'footer';
 //</ПОДЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 
