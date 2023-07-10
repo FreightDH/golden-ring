@@ -23,6 +23,8 @@ function createSlide(info) {
   const infoItemSights = createElement('li', 'info__item', `<span>Что посетить:</span> ${info.sights}`);
   const slideButton = createElement('a', 'slide__btn btn', '<span>Подробнее</span>');
   slideButton.setAttribute('href', `html/cities/${info.image}.html`);
+  slideButton.setAttribute('target', '_blank');
+  slideButton.setAttribute('rel', 'noopener');
 
   slideInfo.append(infoItemYear, infoItemSights);
   slideContent.append(slideCity, slideInfo, slideButton);
