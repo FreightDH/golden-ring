@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
 
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
     font-size: 14px;
     color: #fff;
   }
@@ -43,7 +43,7 @@
     @include adaptiveValue('font-size', 18, 15);
 
     &.active {
-      color: #45be93;
+      color: #4fd2a4;
     }
 
     a {
