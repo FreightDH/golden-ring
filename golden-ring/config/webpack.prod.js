@@ -50,6 +50,7 @@ const config = {
   },
   entry: {
     app: `${paths.src}/js/app.js`,
+    'sergiev-posad': `${paths.src}/js/cities/sergiev-posad.js`,
   },
   output: {
     path: `${paths.build}`,
