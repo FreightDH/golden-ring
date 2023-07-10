@@ -14,7 +14,7 @@ function createSlide(info) {
   const slideImage = createElement(
     'div',
     'slide__image',
-    `<img src="./img/cities/${info.image}.jpg" alt="${info.image}">`,
+    `<img src="./img/slides/${info.image}.jpg" alt="${info.image}">`,
   );
   const slideContent = createElement('div', 'slide__content');
   const slideCity = createElement('div', 'slide__city', `${info.city}`);
@@ -22,7 +22,7 @@ function createSlide(info) {
   const infoItemYear = createElement('li', 'info__item', `<span>Год основания:</span> ${info.date}`);
   const infoItemSights = createElement('li', 'info__item', `<span>Что посетить:</span> ${info.sights}`);
   const slideButton = createElement('a', 'slide__btn btn', '<span>Подробнее</span>');
-  slideButton.setAttribute('href', `${info.image}.html`);
+  slideButton.setAttribute('href', `html/cities/${info.image}.html`);
 
   slideInfo.append(infoItemYear, infoItemSights);
   slideContent.append(slideCity, slideInfo, slideButton);
