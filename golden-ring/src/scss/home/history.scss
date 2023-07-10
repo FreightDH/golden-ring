@@ -5,8 +5,6 @@
 
   background-color: #fff;
 
-  font-family: 'Exo 2';
-
   &__body {
     display: flex;
     flex-direction: column;
@@ -25,6 +23,7 @@
     @include adaptiveValue('padding-top', 30, 15);
 
     font-size: 20px;
+    line-height: 1.4;
     text-align: justify;
     @include adaptiveValue('font-size', 20, 18);
 
