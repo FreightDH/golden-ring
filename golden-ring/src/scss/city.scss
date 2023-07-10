@@ -38,6 +38,15 @@
     span {
       font-weight: 600;
     }
+
+    a {
+      color: #de2f3b;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   &__image {
@@ -54,12 +63,48 @@
     font-size: 30px;
     font-weight: 600;
   }
+
+  &__list {
+    margin: 0px 0px 20px 0px;
+    font-size: 20px;
+  }
 }
+
 .image {
   &__caption {
     padding: 10px 0px 0px 0px;
 
     color: rgba($color: #000000, $alpha: 0.5);
     text-align: center;
+  }
+}
+
+.list {
+  &__title {
+    font-weight: 600;
+  }
+
+  &__content {
+    padding: 20px 0px 0px 0px;
+  }
+
+  &__item {
+    padding: 0px 0px 0px 15px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #000;
+    }
+
+    &:not(:last-child) {
+      margin: 0px 0px 10px 0px;
+    }
   }
 }

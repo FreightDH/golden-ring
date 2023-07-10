@@ -19,7 +19,7 @@
     color: #fff;
   }
 
-  &__list {
+  &__nav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@
     }
   }
 }
-.list {
+.nav {
   &__item {
     font-size: 18px;
     @include adaptiveValue('font-size', 18, 15);
