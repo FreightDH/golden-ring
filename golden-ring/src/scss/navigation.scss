@@ -25,8 +25,6 @@
     padding: 0px 0px 0px 25px;
     position: relative;
 
-    // transition: all 0.2s ease 0s;
-
     &::before {
       content: '';
       position: absolute;
@@ -44,10 +42,6 @@
 
     &:hover {
       color: #2a8b69;
-
-      &::before {
-        // background-color: #2a8b69;
-      }
     }
 
     &.active {
