@@ -32,19 +32,11 @@
     @include adaptiveValue('font-size', 16, 13);
     text-align: center;
     padding: 35px 0 5px 0;
-
-    a {
-      text-decoration: underline;
-    }
   }
 
   &__copyright {
     font-size: 16px;
     @include adaptiveValue('font-size', 16, 13);
-
-    a {
-      text-decoration: underline;
-    }
   }
 }
 .nav {
@@ -54,11 +46,24 @@
 
     &.active {
       color: #4fd2a4;
-    }
 
-    a {
-      text-decoration: underline;
+      a::after {
+        background-color: #4fd2a4;
+      }
     }
+  }
+}
+a {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
   }
 }
 //--------------------------------------------------------------
