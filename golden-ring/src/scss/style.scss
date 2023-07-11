@@ -114,6 +114,10 @@ body {
   > main {
     flex: 1 1 auto;
   }
+
+  @media (max-width: $pc) {
+    overflow: hidden;
+  }
 }
 //</ОБОЛОЧКА>
 

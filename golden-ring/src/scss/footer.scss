@@ -30,6 +30,7 @@
   &__information {
     font-size: 16px;
     @include adaptiveValue('font-size', 16, 13);
+    text-align: center;
     padding: 35px 0 5px 0;
 
     a {
