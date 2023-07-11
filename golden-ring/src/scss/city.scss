@@ -84,8 +84,10 @@
   }
 
   &__image {
-    margin: 0px 0px 20px 0px;
-    @include adaptiveValue('margin-bottom', 20, 10);
+    &:not(:last-child) {
+      margin: 0px 0px 20px 0px;
+      @include adaptiveValue('margin-bottom', 20, 10);
+    }
 
     img {
       width: 100%;
