@@ -145,5 +145,11 @@
         color: #4fd2a4;
       }
     }
+
+    a {
+      &::after {
+        display: none;
+      }
+    }
   }
 }
