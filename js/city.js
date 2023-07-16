@@ -97,13 +97,13 @@
     try {
       const res = await fetch(url);
       const data = await res.json();
-      result.innerHTML = `\n    <ul class="weather__info">\n      <li class="info__item"><span>${data.main.temp.toFixed(
+      result.innerHTML = `\n    <ul class="weather__info">\n      <li class="weather__item"><span>${data.main.temp.toFixed(
         0,
-      )}°C</span></li>\n      <li class="info__item">${
+      )}°C</span></li>\n      <li class="weather__item">${
         data.weather[0].description
-      }</li>\n      <li class="info__item">Скорость ветра: ${data.wind.speed.toFixed(
+      }</li>\n      <li class="weather__item">Скорость ветра: ${data.wind.speed.toFixed(
         0,
-      )} м/с</li>\n      <li class="info__item">Влажность: ${
+      )} м/с</li>\n      <li class="weather__item">Влажность: ${
         data.main.humidity
       }%</li>\n    </ul>\n    <i class="weather__icon owf owf-${data.weather[0].id}"></i>\n    `;
     } catch (error) {
