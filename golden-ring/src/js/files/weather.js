@@ -8,10 +8,10 @@ export async function getWeather(city) {
 
     result.innerHTML = `
     <ul class="weather__info">
-      <li class="info__item"><span>${data.main.temp.toFixed(0)}°C</span></li>
-      <li class="info__item">${data.weather[0].description}</li>
-      <li class="info__item">Скорость ветра: ${data.wind.speed.toFixed(0)} м/с</li>
-      <li class="info__item">Влажность: ${data.main.humidity}%</li>
+      <li class="weather__item"><span>${data.main.temp.toFixed(0)}°C</span></li>
+      <li class="weather__item">${data.weather[0].description}</li>
+      <li class="weather__item">Скорость ветра: ${data.wind.speed.toFixed(0)} м/с</li>
+      <li class="weather__item">Влажность: ${data.main.humidity}%</li>
     </ul>
     <i class="weather__icon owf owf-${data.weather[0].id}"></i>
     `;
