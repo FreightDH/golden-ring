@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+  @@include('html/head.html', { "title": "Золотое кольцо России", "css": "css/style.min.css" })
+
+  <body>
+    <div class="wrapper">
+      <main class="page">
+        <section class="intro">
+          <div class="intro__body">
+            <h1 class="intro__title">Золотое кольцо России</h1>
+            <h2 class="intro__subtitle">Путеводитель по неповторимым памятникам культуры Древней Руси</h2>
+          </div>
+          <div class="intro__background"><img src="@img/poster.jpeg" alt="background" /></div>
+          <div class="intro__arrows arrows"></div>
+        </section>
+        <section class="history">
+          <div class="history__container">
+            <div class="history__body">
+              <div class="history__title">
+                <h3 class="title__text">Немного истории</h3>
+                <div class="title__icon"><img src="@img/svg/book.svg" alt="book-icon" /></div>
+              </div>
+              <div class="history__content">
+                <p class="history__text">
+                  В 1967 году искусствовед Юрий Бычков по заданию газеты «Советская культура» отправился на своем
+                  «москвиче» по городам Владимирской области, чтобы написать о путешествии цикл статей. В конце он решил
+                  не возвращаться по тому же пути, а проехать через Ярославль, заключив тем самым свой маршрут в кольцо.
+                  Серия его путевых заметок вышла под названием «Золотое кольцо». Так появился знаменитый маршрут из 8
+                  городов: <span>Сергиев Посад</span> — <span>Переславль-Залесский</span> —
+                  <span>Ростов Великий</span> — <span>Ярославль</span>— <span>Кострома</span> — <span>Иваново</span> —
+                  <span>Суздаль</span> — <span>Владимир</span>. С 2018 года в классический маршрут добавлен город
+                  <span>Углич</span>.
+                </p>
+                <blockquote class="history__quote">
+                  <div class="quote__body">
+                    <p class="quote__text">
+                      «Впав в задумчивость, бродил по Москве. Погода стояла контрастная пяти солнечным дням недавнего
+                      путешествия — небо заволокло серой пеленой. Поднял глаза ввысь, и взгляд мой встретил тающий в
+                      призрачной вышине, золотящийся сквозь завесу мороси медленно опускающейся с небес дождевой пыли
+                      купол колокольни Ивана Великого. Как током ударило: «Золотое!» Тотчас связалось это «золотое» с
+                      дорогой. Выходило — «Золотое кольцо».
+                    </p>
+                    <p class="quote__author">Юрий Бычков</p>
+                  </div>
+                </blockquote>
+                <div class="history__map"><img src="@img/map.png" alt="map" /></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="slider">
+          <div class="slider__container">
+            <div class="slider__body">
+              <h3 class="slider__title">Города Золотого кольца</h3>
+              <div class="slider__swiper swiper">
+                <div class="swiper__wrapper swiper-wrapper"></div>
+              </div>
+              <div class="swiper__navigation">
+                <div class="swiper__button swiper-button-prev"></div>
+                <div class="swiper__button swiper-button-next"></div>
+              </div>
+              <div class="swiper__pagination swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/footer.html',{})
+    </div>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
