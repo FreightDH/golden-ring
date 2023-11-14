@@ -3,13 +3,25 @@ import slidesInfo from './slidesInfo.js';
 export function generateSlides() {
   const swiperWrapper = document.querySelector('.swiper__wrapper');
 
-  slidesInfo.forEach((info) => {
-    const slide = createSlide(info);
+  slidesInfo.forEach((info, index) => {
+    let slide;
+
+    switch (index) {
+      case 0:
+      case 1:
+      case 2:
+        slide = createSlide(info, true);
+        break;
+      default:
+        slide = createSlide(info);
+        break;
+    }
+
     swiperWrapper.append(slide);
   });
 }
 
-function createSlide(info) {
+function createSlide(info, isReady = false) {
   const slide = createElement('div', 'swiper__slide swiper-slide');
   const slideImage = createElement(
     'div',
@@ -22,9 +34,9 @@ function createSlide(info) {
   const infoItemYear = createElement('li', 'info__item', `<span>Год основания:</span> ${info.date}`);
   const infoItemSights = createElement('li', 'info__item', `<span>Что посетить:</span> ${info.sights}`);
   const slideButton = createElement('a', 'slide__btn btn', '<span>Подробнее</span>');
-  slideButton.setAttribute('href', `html/cities/${info.image}.html`);
-  slideButton.setAttribute('target', '_blank');
-  slideButton.setAttribute('rel', 'noopener');
+
+  if (isReady) slideButton.setAttribute('href', `html/cities/${info.image}.html`);
+  else slideButton.setAttribute('href', `html/errorPage.html`);
 
   slideInfo.append(infoItemYear, infoItemSights);
   slideContent.append(slideCity, slideInfo, slideButton);

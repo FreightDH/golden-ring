@@ -51,6 +51,7 @@ const config = {
   entry: {
     app: `${paths.src}/js/app.js`,
     city: `${paths.src}/js/city.js`,
+    error: `${paths.src}/js/error.js`,
   },
   output: {
     path: `${paths.build}`,
