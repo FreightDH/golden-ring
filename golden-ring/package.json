@@ -7,15 +7,10 @@
   "type": "module",
   "license": "",
   "scripts": {
-    "dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
+    "start": "gulp && webpack serve --progress -c config/webpack.dev.js",
     "build": "gulp build --build",
-    "sprite": "gulp sprite",
     "fonts": "gulp fonts --rewrite",
-    "deploy": "gulp deployFTP --build",
-    "zip": "gulp deployZIP --build",
-    "devbuild": "gulp build --build --nowebp",
-    "tmp": "gulp -f gulpfile.tmp.js",
-    "bem": "fls-bemtree-from-html"
+    "zip": "gulp deployZIP --build"
   },
   "devDependencies": {
     "copy-webpack-plugin": "latest",
