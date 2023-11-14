@@ -1,4 +1,6 @@
 export async function getWeather(city) {
+  if (city === 'Ростов Великий') city = 'Ростов';
+
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&appid=241a6c975817c3a04916e8babb8a5626&units=metric`;
   const result = document.querySelector('.city__weather');
 
