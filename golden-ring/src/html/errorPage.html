@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+  @@include('html/head.html', { "title": "Страница не найдена", "css": "css/style.min.css" })
+
+  <body>
+    <div class="wrapper">
+      <main class="error">
+        <h1 class="error__title">Страница пока не готова...</h1>
+        <form action="#" method="post" id="form" class="error__form">
+          <input
+            autocomplete="off"
+            type="text"
+            name="form[]"
+            placeholder="Введите почтовый ящик..."
+            class="error__input"
+          />
+          <button type="submit" class="error__button">Подписаться на обновления</button>
+        </form>
+        <a href="../index.html" class="error__link">Вернуться на главную</a>
+      </main>
+    </div>
+    <script src="../../js/error.min.js"></script>
+  </body>
+</html>
