@@ -1,4 +1,4 @@
-# Golden Ring
+## Project "Golden Ring"
 
 ### Tech stack: 
 - HTML
